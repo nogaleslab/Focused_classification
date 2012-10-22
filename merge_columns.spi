@@ -1,0 +1,44 @@
+FR
+?Input file 1? <file1>
+
+FR
+?INput file 2? <file2>
+
+UD N [tot]
+<file1>
+
+SD IC NEW
+incore
+3,[tot]
+
+[onea]=1
+
+do lb1 [part]=1,[tot]
+
+
+	UD IC [part] [one]
+	<file1>
+	
+	UD IC [part] [two]
+	<file2>
+
+	SD IC [part] [one] [two] [onea]
+	incore
+
+lb1
+
+SD IC COPY
+incore
+merge_<file1>_<file2>
+
+UD ICE
+<file1>
+
+UD ICE
+<file2>
+
+SD ICE
+incore
+
+en d
+
