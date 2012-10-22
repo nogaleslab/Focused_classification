@@ -1,3 +1,7 @@
+This repo contains scripts for analyzing the position of flexibly attached subdomains with EM images. 
+
+Protocol for analyzing flexibilty plotted onto 2D:
+
 1. Merge columns from distance files into a single file: first file - distanceA_C; second file distanceB_C
 
 2. Output MSA plt from header of sum3_10_150.img
