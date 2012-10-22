@@ -1,1 +1,37 @@
-test
+1. Merge columns from distance files into a single file: first file - distanceA_C; second file distanceB_C
+
+2. Output MSA plt from header of sum3_10_150.img
+
+3.'Select' avearages and membership info from classums stack:
+
+	$ ./select_stack_msaPLT.py 
+	Usage: select_stack_msaPLT.py -p <plt file> -s <classums_stack> -b <boxed.lis file> 
+
+	Options:
+	  -h, --help  show this help message and exit
+	  -p FILE     PLT output file from msa classums header
+	  -s FILE     msa classums stack
+	  -b FILE     List of box files (ls *.box > boxed.lis)
+	  -d          debug
+
+	$ ./select_stack_msaPLT.py -p sum3_10_150.plt -s sum3_10_150.img -b boxed.lis 
+
+	This script will tell you run a proc2d command - do it to select 'good' averages.
+
+4. Input parameters to create averages:
+
+	$ ./make_subClass_dualAxes.py
+	Usage: make_subClass_dualAxes.py -s <classums stack> -f <merged distances file> --topX=x --topY=y --botX=x --botY=y
+
+	Options:
+	  -h, --help    show this help message and exit
+	  -s FILE       stack of selected, classified averages
+	  -f FILE       Merged distances file
+	  --topX=FLOAT  top left corner of box to use,x coordinate
+	  --topY=FLOAT  top left corner of box to use,y coordinate
+	  --botX=FLOAT  bottom right corner of box to use, x coordinate
+	  --botY=FLOAT  bottom right corner of box to use, y coordinate
+	  -d            debug
+	
+
+	$ ./make_subClass_dualAxes.py -s sum3_10_150_sel.img -f merge_distanceA_C_distanceB_C.spi --topX=12 --topY=28 --botX=20 --botY=24 
